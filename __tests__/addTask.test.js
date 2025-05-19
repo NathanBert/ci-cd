@@ -1,4 +1,4 @@
-const { addTask } = require('../public/taskManager');
+const { addTask } = require('../public/taskManager.js');
 
 test('adds a new task', () => {
     const tasks = [];

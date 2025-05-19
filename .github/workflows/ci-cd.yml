@@ -30,6 +30,6 @@ jobs:
     - name: Deploy to Azure
       uses: azure/webapps-deploy@v2
       with:
-        app-name: 'your-azure-app-name'
+        app-name: 'ToDo'
         publish-profile: ${{ secrets.AZURE_PUBLISH_PROFILE }}
         package: .
