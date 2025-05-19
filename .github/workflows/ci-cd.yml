@@ -24,6 +24,9 @@ jobs:
     - name: Run tests
       run: npm test
 
+    - name: Build bundleJS
+      run: npx webpack --mode production
+
     - name: Deploy to Azure
       uses: azure/webapps-deploy@v2
       with:
