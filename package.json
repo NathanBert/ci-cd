@@ -4,6 +4,7 @@
   "description": "A ToDo list App",
   "main": "server.js",
   "scripts": {
+    "start":"node server.js",
     "test": "jest"
   },
   "keywords": [],
