@@ -1,4 +1,4 @@
-const { addTask } = require('./script');
+const { addTask } = require('../public/script');
 
 test('adds a new task', () => {
     const tasks = [];

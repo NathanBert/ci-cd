@@ -1,4 +1,4 @@
-const { updateTask } = require('./script');
+const { addTask } = require('../public/script');
 
 test('updates a task', () => {
     const tasks = [{ text: 'Task to update', color: '#ffffff', dueDate: '2023-12-31', id: '1' }];
