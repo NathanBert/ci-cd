@@ -17,6 +17,19 @@ app.post('/tasks', (req, res) => {
     res.status(201).send(task);
 });
 
+app.delete('/tasks/:id', (req, res) => {
+    const taskId = req.params.id;
+    tasks = tasks.filter(task => task.id !== taskId);
+    res.status(200).send({ message: 'Task deleted' });
+});
+
+app.put('/tasks/:id', (req, res) => {
+    const taskId = req.params.id;
+    const updatedTask = req.body;
+    tasks = tasks.map(task => task.id === taskId ? updatedTask : task);
+    res.status(200).send(updatedTask);
+});
+
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 });

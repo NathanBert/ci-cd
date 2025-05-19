@@ -10,7 +10,7 @@ body {
     margin-bottom: 20px;
 }
 
-#task-input {
+#task-input, #task-color, #task-due-date {
     flex: 1;
     padding: 10px;
     font-size: 16px;
@@ -39,4 +39,22 @@ button:hover {
     margin-bottom: 5px;
     background-color: #f9f9f9;
     border: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.task-color {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.delete-button {
+    background-color: #ff4444;
+}
+
+.delete-button:hover {
+    background-color: #cc0000;
 }
