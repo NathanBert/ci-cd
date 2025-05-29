@@ -64,3 +64,13 @@ button:hover {
 .delete-button:hover {
     background-color: #cc0000;
 }
+
+
+
+.edit-button {
+    background-color: #65bb1e;
+}
+
+.edit-button:hover {
+    background-color: #65bb1e;
+}

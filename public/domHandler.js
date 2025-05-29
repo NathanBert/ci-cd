@@ -27,6 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     ${task.text} (Due: ${task.dueDate})
                 </div>
                 <button class="delete-button" data-id="${task.id}">Delete</button>
+                <button class="edit-button" data-id="${task.id}">Edit</button>
             `;
             taskList.appendChild(taskItem);
             taskInput.value = '';
@@ -46,6 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         ${task.text} (Due: ${task.dueDate})
                     </div>
                     <button class="delete-button" data-id="${task.id}">Delete</button>
+                    <button class="edit-button" data-id="${task.id}">Edit</button>
                 `;
                 taskList.appendChild(taskItem);
             });
@@ -57,6 +59,26 @@ document.addEventListener('DOMContentLoaded', function() {
             const taskId = event.target.getAttribute('data-id');
             tasks = deleteTask(tasks, taskId); // Utiliser la fonction deleteTask
             event.target.parentElement.remove();
+        }
+        if (event.target.classList.contains('edit-button')) {
+            const taskId = event.target.getAttribute('data-id');
+            const taskToEdit = tasks.find(task => task.id === taskId);
+            if (taskToEdit) {
+                const newText = prompt('Edit task text:', taskToEdit.text);
+                if (newText !== null && newText.trim() !== '') {
+                    const updatedTask = { ...taskToEdit, text: newText.trim() };
+                    tasks = updateTask(tasks, taskId, updatedTask); // Utiliser la fonction updateTask
+                    event.target.parentElement.querySelector('div').innerHTML = `
+                        <span class="task-color" style="background-color: ${updatedTask.color};"></span>
+                        ${updatedTask.text} (Due: ${updatedTask.dueDate})`;
+
+                    
+                }
+                else
+                {
+                    alert('Task text cannot be empty.');
+                }
+            }
         }
     });
 });

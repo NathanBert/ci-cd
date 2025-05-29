@@ -28,6 +28,7 @@ document.getElementById('task-form').addEventListener('submit', function(event) 
                     ${newTask.text} (Due: ${newTask.dueDate})
                 </div>
                 <button class="delete-button" data-id="${newTask.id}">Delete</button>
+                <button class="edit-button" data-id="${newTask.id}">Edit</button>
             `;
             taskList.appendChild(taskItem);
             taskInput.value = '';
@@ -48,6 +49,8 @@ fetch('/tasks')
                     ${task.text} (Due: ${task.dueDate})
                 </div>
                 <button class="delete-button" data-id="${task.id}">Delete</button>
+                <button class="edit-button" data-id="${newTask.id}">Edit</button>
+
             `;
             taskList.appendChild(taskItem);
         });
